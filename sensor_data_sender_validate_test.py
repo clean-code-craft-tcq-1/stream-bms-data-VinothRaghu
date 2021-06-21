@@ -48,5 +48,5 @@ class test_battery_sender_readings(unittest.TestCase):
 
 
 
-if __name__ == '__main__':
-    unittest.main()
+#if __name__ == '__main__':
+ #   unittest.main()
