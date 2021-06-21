@@ -19,11 +19,7 @@ typedef enum
 	Charge_rate
 }Data_Type;
 
-typedef enum
-{
-	ToCalc_MinValue,
-	ToCalc_MaxValue
-}UserRequestOperation;
+
 
 #define MAX_SIZE 400
 #define TEMP_READING_NUMBER	15
@@ -39,4 +35,3 @@ Receiver_State GetData(char *InputData, float Temperature[], float Charge_rate[]
 Receiver_State Process_ReadData(char *InputData, float Temperature[], float Charge_rate[],Data_Type Data_Received );
 Receiver_State Calc_MovingAverage(float arrayvalue[],int lengthofData);
 Receiver_State ReadFromConsole(float Temperature[], float Charge_rate[]);
-Receiver_State FindMinandMaxValue(float InputReading[], UserRequestOperation UserRequestOperator);
