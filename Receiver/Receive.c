@@ -47,7 +47,7 @@ Receiver_State Process_ReadData(char *InputData, float Temperature[], float Char
   	   }
 	   else
 	   {
-		 Data_Received = Temperature;
+		 Data_Received = Temp_data;
 		 ProcessedDataSuccess=  GetData(InputData, Temperature, Charge_rate, Data_Received );
 	   }
 	   
@@ -77,7 +77,7 @@ Receiver_State GetData(char *InputData, float Temperature[], float Charge_rate[]
     InputStringlen = strlen(InputData);
     InputData[InputStringlen-1] = '\0';
 
-    if(Data_Received == Temperature )
+    if(Data_Received == Temp_data )
     {
 		while ( Temperature_index <= TEMP_READING_NUMBER )
 			{
