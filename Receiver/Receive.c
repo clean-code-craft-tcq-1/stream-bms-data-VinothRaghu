@@ -14,15 +14,16 @@ float Charge_rate[MAX_SIZE]={};
 Receiver_State ReadFromConsole(float Temperature[], float  Charge_rate[])
 {
 	char InputData[1024];
+	Data_Type Data_Received;
 	Receiver_State ReadConsoleSuccess= FAIL;
    while (scanf("%s\n", InputData) !=EOF) 
    {
-	  ReadConsoleSuccess= Process_ReadData(InputData, Temperature, Charge_rate);
+	  ReadConsoleSuccess= Process_ReadData(InputData, Temperature, Charge_rate, Data_Received);
    }
    return ReadConsoleSuccess;
 }
 
-Receiver_State Process_ReadData(char *InputData, float Temperature[], float Charge_rate[])
+Receiver_State Process_ReadData(char *InputData, float Temperature[], float Charge_rate[],Data_Type Data_Received)
 {
 	int ResultComparetemp,ResultCompareCharge_rate=0;
 	Receiver_State ProcessedDataSuccess= FAIL;
