@@ -7,7 +7,7 @@ Created on Wed Jun  9 13:07:45 2021
 import sensor_data_sender_validate
    
 def main():    
-  sensor_data_sender_validate.send_bms_data(["Charge_rate" ,"Temperature"],"Console")
+  sensor_data_sender_validate.send_bms_data(["ChargeRate" ,"Temperature"],"Console")
   
 
 
