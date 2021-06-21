@@ -16,7 +16,7 @@ typedef enum
 typedef enum
 {
 	Temperature,
-	Charge_rate
+	ChargeRate
 }Data_Type;
 
 
