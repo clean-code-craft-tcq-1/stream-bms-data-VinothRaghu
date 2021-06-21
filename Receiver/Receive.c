@@ -8,16 +8,7 @@ minMax_st minMax_data;
 float Temperature[MAX_SIZE]={};
 float Charge_rate[MAX_SIZE]={};
 
-Receiver_State (*FindMinMaxofInput[])(float InputReading[])={Calc_MinValue,Calc_MaxValue};
-
-
-
-Receiver_State FindMinandMaxValue(float InputReading[], UserRequestOperation UserRequestOperator)
-{
-	Receiver_State UserRequestSuccess= FAIL;
-	UserRequestSuccess=(*FindMinMaxofInput[UserRequestOperator])(InputReading);
-	return UserRequestSuccess;
-}
+//Receiver_State (*FindMinMaxofInput[])(float InputReading[])={Calc_MinValue,Calc_MaxValue};
 	
 
 Receiver_State ReadFromConsole(float Temperature[], float  Charge_rate[])
