@@ -58,7 +58,7 @@ Receiver_State Process_ReadData(char *InputData, float Temperature[], float Char
   	   }
 	   else
 	   {
-		 Data_Received = Charge_rate;
+		 Data_Received = ChargeRate;
 		 ProcessedDataSuccess=  GetData(InputData, Temperature, Charge_rate, Data_Received );
 	   }
 	   
@@ -90,7 +90,7 @@ Receiver_State GetData(char *InputData, float Temperature[], float Charge_rate[]
 	   BatteryData=PASS;
     }
 	
-    if(Data_Received == Charge_rate ) 
+    if(Data_Received == ChargeRate ) 
     {
 		while ( Charge_rate_index <= CHARGERATE_READING_NUMBER )
 		{
