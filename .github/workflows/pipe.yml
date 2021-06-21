@@ -22,7 +22,7 @@ jobs:
  
     - name: run
       run: |
-        g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker *.c*
+        g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker ./Receiver/*.c*
         python ./sensor_data_sender.py | ./testchecker 
         
     - name: install coverage tool
