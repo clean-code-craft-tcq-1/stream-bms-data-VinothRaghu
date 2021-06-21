@@ -18,12 +18,12 @@ Receiver_State ReadFromConsole(float Temperature[], float  Charge_rate[])
 	Receiver_State ReadConsoleSuccess= FAIL;
    while (scanf("%s\n", InputData) !=EOF) 
    {
-	  ReadConsoleSuccess= Process_ReadData(InputData, Temperature, Charge_rate, Data_Received);
+	  ReadConsoleSuccess= Process_ReadData(InputData, Temperature, Charge_rate, Data_Receive);
    }
    return ReadConsoleSuccess;
 }
 
-Receiver_State Process_ReadData(char *InputData, float Temperature[], float Charge_rate[],Data_Type Data_Received)
+Receiver_State Process_ReadData(char *InputData, float Temperature[], float Charge_rate[],Data_Type Data_Receive)
 {
 	int ResultComparetemp,ResultCompareCharge_rate=0;
 	Receiver_State ProcessedDataSuccess= FAIL;
@@ -57,7 +57,7 @@ Receiver_State Process_ReadData(char *InputData, float Temperature[], float Char
 	   return ProcessedDataSuccess;
 }  
 
-Receiver_State GetData(char *InputData, float Temperature[], float Charge_rate[], Data_Type Data_Received)
+Receiver_State GetData(char *InputData, float Temperature[], float Charge_rate[], Data_Type Data_Receive)
 {
 	Receiver_State BatteryData= FAIL;
 	Data_Type Data_Received;
