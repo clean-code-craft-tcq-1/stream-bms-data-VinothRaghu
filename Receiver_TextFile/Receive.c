@@ -157,7 +157,7 @@ void Calc_TemperatureSimpleMovingAverage(int ParameterCount)
 void Calc_ChargeRateSimpleMovingAverage(int ParameterCount)
 {
   float ChargeRate_SMA= Calc_SimpleMovingAverage(ChargeRate, ParameterCount);
-  printf("Simple moving average of State-of-Charge is %0.2f%%\n",ChargeRate_SMA);
+  printf("Simple moving average of ChargeRate is %0.2f%%\n",ChargeRate_SMA);
 }
 
 
@@ -195,12 +195,16 @@ Status ReceiveDatafromSender ()
 {
     Status ReadStatus= FAIL;
     ReadStatus= ReadfromConsole();
-  
+  printf("TEST DEBUG \n");
     if (ReadStatus)
     	{
+	    printf("TEST DEBUG 1 \n");
 	    Calc_TemperatureMinandMaxRange(EntryCount);
+	    printf("TEST DEBUG 2 \n");
 	    Calc_ChargeRateMinandMaxRange(EntryCount);
+	    printf("TEST DEBUG 3  \n");
 	    Calc_TemperatureSimpleMovingAverage(EntryCount);
+	    printf("TEST DEBUG4  \n");
 	    Calc_ChargeRateSimpleMovingAverage(EntryCount);
         }
     return (ReadStatus);
