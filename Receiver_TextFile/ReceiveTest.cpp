@@ -9,3 +9,9 @@ TEST_CASE("To check if file was successfully written to console")
   REQUIRE(OutputValue(OutVal)== PASS);
  
 }
+
+TEST_CASE("To check if file was successfully opened to read") 
+{
+  Receiver_InType  InVal = FileInput ; 
+  REQUIRE(InputValue(InVal) == PASS); 
+}
