@@ -195,16 +195,16 @@ Status ReceiveDatafromSender ()
 {
     Status ReadStatus= FAIL;
     ReadStatus= ReadfromConsole();
-  printf("TEST DEBUG \n");
+ 
     if (ReadStatus)
     	{
-	    printf("TEST DEBUG 1 \n");
+	    
 	    Calc_TemperatureMinandMaxRange(EntryCount);
-	    printf("TEST DEBUG 2 \n");
+	    
 	    Calc_ChargeRateMinandMaxRange(EntryCount);
-	    printf("TEST DEBUG 3  \n");
+	    
 	    Calc_TemperatureSimpleMovingAverage(EntryCount);
-	    printf("TEST DEBUG4  \n");
+	   
 	    Calc_ChargeRateSimpleMovingAverage(EntryCount);
         }
     return (ReadStatus);
