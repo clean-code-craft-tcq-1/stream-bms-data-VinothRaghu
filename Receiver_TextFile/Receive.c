@@ -38,7 +38,7 @@ Status ReadfromConsole()
   int line=1, Index=0;
   Status ReadStatus= FAIL;
 
-  Datafile=fopen("BatteryRx.txt", "r");
+  Datafile=fopen("./Receiver_TextFile/BatteryRx.txt", "r");
   if (Datafile==NULL)
     {
       printf("File open attempt failed\n");
