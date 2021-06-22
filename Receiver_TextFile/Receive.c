@@ -86,12 +86,15 @@ Receiver_State OutToConsole(float Temperature[],float ChargeRate[])
 	float TempAvg, ChargerateAvg, TempSum, ChargeSum = 0;
     for(int Index=0;Index<linecount;Index++)
     {
+	    TempSum+= Temperature[Index];
+	   ChargeSum+= ChargeRate[Index];
         printf("Temperature value == %f \t ChargeRate value == %f \t\n",Temperature[Index],ChargeRate[Index]);
 	
     }
 	
 	for(int i=(linecount-5); i< linecount; i++)
 	{
+		
 		TempSum+= Temperature[i];
 		ChargeSum+= ChargeRate[i];
 	}
