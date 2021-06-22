@@ -94,6 +94,7 @@ Receiver_State OutToConsole(float Temperature[],float ChargeRate[])
 	{
 		TempSum = Temperature[avg_index] +Temperature[avg_index-1]+Temperature[avg_index-2]+Temperature[avg_index-3]+Temperature[avg_index-4];
 		ChargeSum = ChargeRate[avg_index] + ChargeRate[avg_index-1]  + ChargeRate[avg_index-2] + ChargeRate[avg_index-3] + ChargeRate[avg_index-4];
+		avg_index++;
 	}
 	
 	TempAvg = TempSum/5;
