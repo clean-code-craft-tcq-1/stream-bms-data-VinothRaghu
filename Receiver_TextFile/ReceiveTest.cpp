@@ -3,8 +3,9 @@
 #include "test/catch.hpp"
 #include "Receive.h"
 
-TEST_CASE("To check if file was successfully opened to read") 
+TEST_CASE("To check if file was successfully written to console") 
 {
-  Receiver_InType InVal = FileInput ; 
-  REQUIRE(InputValue(InVal) == PASS); 
+  Receiver_OutType OutVal = PrintToConsole ;
+  REQUIRE(OutputValue(OutVal)== PASS);
+ 
 }
