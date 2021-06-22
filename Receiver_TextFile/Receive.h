@@ -1,52 +1,39 @@
 /* **************************************************************************************************
-* File Name   : Receiver.h
+
+* File Name   : Receive.h
 * Author      : Abhijeet Chitagubbi
+
 * * ************************************************************************************************** */
-/*
- **********************************************************************************************************************
- * Includes and Definition Section
- **********************************************************************************************************************
-*/
 
-#define MAX_VAL 50
+/**********************************************
+Include header files
+***********************************************/
 
-/*
- **********************************************************************************************************************
- * TypeDef handling Section
- **********************************************************************************************************************
-*/
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
 
+typedef enum {
+  FAIL,
+  PASS
+} Status;
 
-typedef enum
-{   FAIL,
-	PASS
-}Receiver_State;
-
-typedef enum{
-	PrintToConsole
-}Receiver_OutType;
-
-typedef enum{
-	FileInput
-}Receiver_InType;
-
-/*
- **********************************************************************************************************************
- * TypeDef handling Section
- **********************************************************************************************************************
-*/
-
-Receiver_State ReadData(float Temperature[],float ChargeRate[]);
-Receiver_State OutToConsole(float Temperature[],float ChargeRate[]);
-Receiver_State InputValue(Receiver_InType InVal);
-Receiver_State OutputValue(Receiver_OutType OutVal);
+#define Max_ArraySize 1024
+#define AttributeCount 2
+extern float Temperature[Max_ArraySize];
+extern float ChargeRate[Max_ArraySize];
+extern int EntryCount;
+extern float MinimumAttributeValueArray[AttributeCount];
+extern float MaximumAttributeValueArray[AttributeCount];
 
 
-/*
- **********************************************************************************************************************
- *Extern Declarations
- **********************************************************************************************************************
-*/
-
-extern float Temperature[MAX_VAL];
-extern float ChargeRate[MAX_VAL];
+extern Status ReadfromConsole();
+extern void Calc_TemperatureMinandMaxRange(int ParameterCount);
+extern void Calc_ChargeRateMinandMaxRange(int ParameterCount);
+extern void Calc_MaxParameterValue(float AttributeValue[Max_ArraySize], int ParameterCount, float *MaximumAttributeValue);
+extern void Calc_MinParameterValue(float AttributeValue[Max_ArraySize], int ParameterCount, float *MinimumAttributeValue);
+extern void Calc_TemperatureSimpleMovingAverage(int ParameterCount);
+extern void Calc_ChargeRateSimpleMovingAverage(int ParameterCount);
+extern float Calc_SimpleMovingAverage(float AttributeValue[Max_ArraySize], int ParameterCount);
+extern Status ReceiveDatafromSender();
