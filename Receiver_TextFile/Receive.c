@@ -82,7 +82,7 @@ Receiver_State OutputValue(Receiver_OutType OutVal)
 
 Receiver_State OutToConsole(float Temperature[],float ChargeRate[])
 {
-	int avg_index-=0;
+	int avg_index =0;
 	float TempAvg, ChargerateAvg, TempSum, ChargeSum = 0;
     for(int Index=0;Index<linecount;Index++)
     {
