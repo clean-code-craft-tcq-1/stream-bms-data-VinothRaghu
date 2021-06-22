@@ -90,11 +90,10 @@ Receiver_State OutToConsole(float Temperature[],float ChargeRate[])
 	
     }
 	
-	while ( avg_index > 4 )
+	for(int i=(linecount-5); i< linecount; i++)
 	{
-		TempSum = Temperature[avg_index] +Temperature[avg_index-1]+Temperature[avg_index-2]+Temperature[avg_index-3]+Temperature[avg_index-4];
-		ChargeSum = ChargeRate[avg_index] + ChargeRate[avg_index-1]  + ChargeRate[avg_index-2] + ChargeRate[avg_index-3] + ChargeRate[avg_index-4];
-		avg_index++;
+		TempSum+= Temperature[i];
+		ChargeSum+= ChargeRate[i];
 	}
 	
 	TempAvg = TempSum/5;
