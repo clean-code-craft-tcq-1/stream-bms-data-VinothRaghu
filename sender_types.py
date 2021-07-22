@@ -15,6 +15,9 @@ def send_to_console(parameter_values,battery_parameter):
       print(str(item))
       time.sleep(0.2)
   return True
+
+def send_to_console_validate(parameter_values,battery_parameter):
+    return battery_parameter,parameter_values
   
 def send_to_controller(breachType):
   header = 0xfeed
@@ -29,4 +32,5 @@ alertTarget_type = {
         'EMAIL': send_to_email,
         'CONTROLLER' : send_to_controller,
         'CONSOLE' : send_to_console
+        'VALIDATE_OUTPUT': send_to_console_validate
         }
