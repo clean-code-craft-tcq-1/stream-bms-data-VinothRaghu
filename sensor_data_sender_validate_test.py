@@ -45,6 +45,15 @@ class test_battery_sender_readings(unittest.TestCase):
     
   def test_alertType(self):
       self.assertTrue(sensor_data_sender_validate.send_bms_data(["Temperature", "Soc","ChargeRate"],"Console"))
+  
+  def test_outputformat(self):
+      parameter,data = (sensor_data_sender_validate.send_bms_data_validate(["Temperature"],"VALIDATE_OUTPUT"))
+      print(data)
+      self.assertEqual(parameter,"Temperature") 
+      for i in range(3):
+          self.assertFalse(math.isnan(data[i]))
+      print("This will check the output format parameter followed by data coming or not in the defined times")
+
 
 
 
