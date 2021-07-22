@@ -21,6 +21,16 @@ def random_number_generator(min,max):
     for i in range(15):
         random_number.append(random.uniform(min,max))
     return random_number   
+  
+def random_number_generator_test(min,max):
+  #Generates random numbers between min and max
+  if isinstance((min+max) , int):
+    return random.sample(range(min, max), 3)
+  elif isinstance((min+max) , float):
+    random_number=[]
+    for i in range(1):
+        random_number.append(random.uniform(min,max))
+    return random_number 
 
 def send_bms_data(battery_parameters,alert_type):
      if alert_type is math.nan:
@@ -33,6 +43,18 @@ def send_bms_data(battery_parameters,alert_type):
              parameter_values = generate_bms_data(battery_parameter.upper())      
              publish_data(parameter_values,battery_parameter,alert_type.upper())
      return True
+
+def send_bms_data_validate(battery_parameters,alert_type):
+     if alert_type is math.nan:
+         raise ValueError('Alert type is nan value')
+     elif battery_parameters is math.nan:
+         raise ValueError('battery parameter is nan value')    
+     else:
+         validate_bms_data(battery_parameters,alert_type)    
+         for battery_parameter in battery_parameters:
+             parameter_values = generate_bms_data_test(battery_parameter.upper())      
+             
+     return publish_data(parameter_values,battery_parameter,alert_type.upper())
          
 
 def validate_bms_data(battery_parameters,alert_type):
@@ -62,6 +84,10 @@ def validate_alertType_key(alert_type):
 def generate_bms_data(battery_parameter):
     min,max = battery_threshold_limit[battery_parameter]
     return random_number_generator(min,max)
+  
+def generate_bms_data_test(battery_parameter):
+    min,max = battery_threshold_limit[battery_parameter]
+    return random_number_generator_test(min,max)
  
 def publish_data(parameter_values,battery_parameter,alert_type):
     return check_and_alert(parameter_values, battery_parameter,alert_type)
